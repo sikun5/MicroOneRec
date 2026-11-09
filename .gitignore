@@ -2,3 +2,11 @@ __pycache__/
 *.py[cod]
 /.venv-sid/
 /outputs/sid/
+
+.DS_Store
+.vscode
+
+# 环境变量与密钥
+.env
+.env.*
+*.env

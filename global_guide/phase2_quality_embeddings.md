@@ -1,8 +1,8 @@
 # Phase 2：质量特征与文本表示
 
-> **初始状态：未开始。**  
+> **状态：已完成并验收（2026-11-10，run_id `P2-EMB-A`/`P2-EMB-BC`/`P2-EMB-DIAG`）。**P2-1至P2-6全部实测通过（携带已披露限制交接），无未解决P0，正式缓存33文件齐全；验收证据见 `outputs/v2/evidence/phase2/acceptance.md`。  
 > 导航：[主入口](experiment_setting.md) · [上一期：数据与环境](phase1_dataset_prep.md) · [下一期：RQ-VAE](phase3_rqvae_training.md)  
-> 协议：[v2 方法定义](../../topic_minionerec_v2.md#4-abc-方法定义)。所有产物路径相对仓库根目录。
+> 协议：[v2 方法定义](../../topic_minionerec_v2.md#4-abc-方法定义)。所有产物路径相对仓库根目录；本期实际执行目录为远端 `/hpc2hdd/home/swu073/sikun/dsaa5020/MicroOneRec`（Phase 1 已确认为指定工作目录的物理路径）。
 
 ## 1. 实验目标
 
@@ -60,6 +60,8 @@ python scripts/v2_build_embeddings.py \
   --output-root outputs/v2/embeddings
 ```
 
+> **实现状态（2026-11-10）：**`scripts/v2_build_embeddings.py` v1.1 已实现并验收（sha256 前 16 位 `83678bd245d84bb6`；阶段 quality/encode/diagnostics，memmap 进度恢复签名绑定 chunk_tag/max_length/模型/文本集 SHA）；smoke 入口 `scripts/v2_phase2_smoke.py`（`6587596e…`）；独立检查入口 `scripts/v2_phase2_final_checks.py`（`08806266…`）。实测冻结协议：独立环境 `.venv-phase2`（transformers 4.51.3）、revision `5cf2132a…` 实测 D=2560、BF16 权重、batch=1 无 padding、sdpa、FP32 masked mean/L2/缓存、tf32 off、max_length 2048 全量零截断。
+
 ## 3. 验收且可推进标准
 
 | 编号 | 条件 | 未来证据 | 不满足时 |
@@ -73,13 +75,26 @@ python scripts/v2_build_embeddings.py \
 
 权重集中或短描述被低估可作为方法局限记录，不要求编码结果使某组获胜。数值异常或ID错位属于技术错误，不能当作负结果推进。
 
+### 3.1 验收结果（2026-11-10 实测，run_id `P2-EMB-A`/`P2-EMB-BC`/`P2-EMB-DIAG`）
+
+| 编号 | 实测值 | 证据（sha256 前 16 位，完整值见 acceptance.md） | 结论 |
+|---|---|---|---|
+| P2-1 | 公式样例 18/18 + 独立重算 20 样本全对；q∈[0,1]、w∈[0,0.5] 全量成立；重复描述按公式降权实证（32 词重复 r=0.9333→q=0.0667）；B 空描述 327 行逐字节回退（np.array_equal）；229/327/3 三种缺失口径并存 | `quality_rule_checks.json` `b6473d6b0fac41a7`（18/18）、`cache_checks.json` `f6158d9287ec8863` | 通过 |
+| P2-2 | 正式缓存恰 33 文件 = 13 向量数组 [3686,2560] float32 + 10 bool mask [3686] + 10 JSON；item_ids 三副本+canonical 一致且与 quality_features 同序；13 数组全局范数 ∈ [0.99999990, 1.00000011]，max\|norm−1\| = 1.052e-07；无 NaN/Inf/零范数 | `cache_checks.json` `f6158d9287ec8863`（12/12）、`t5_verify.json` `cd250f0c…`（14/14）、`t5_cache_table.json` `639d2b89…`（33 文件全表） | 通过 |
+| P2-3 | B/C clean 整文件 SHA-256 相等（`06d5797f…`），B/C 诊断 7 文件逐字节相等；train 清单全 seed1701（3,686 条）、diagnostic 全 seed2701（11,058 条）零混用；views_source 绑定 `17258e1d…`；乱序输入按 item ID 逐字节恢复 | `cache_checks.json`（shared_cache_sha_proof）、`view_checks.json` `0041e5eb…` | 通过 |
+| P2-4 | 4,021,774,336 参数全 BF16、全 requires_grad=False + eval、输出无 grad_fn；masked mean 双实现 diff=0.0（numpy 对照 <1e-9）；batch=1 无 padding（锁定协议，padding 对照 7.5e-4/9.8e-4 仅观测）；2048 上限全量零截断（最长 1,108 tokens）；生产路径小段重编码逐字节复现（历史 1.49e-8 经定向定位为检查器独立实现舍入差，非生产链非确定性） | `encoder_checks.json` `0beccfee…`（16/16）、`param_memory_check.json` `cf37ce78…`、`item1631_localization.json` `a0299bbd…` | 通过 |
+| P2-5 | 视图 title/item 与目录 0 违规（3,686+11,058 条）；有效标记 3,356/3,356/3,356/3,359 与冻结清单一致；无效行（229+98+3+330）复制本组干净向量 0 违规；dropall 有效行输入=仅标题；扰动质量独立重算 | `view_checks.json` `0041e5eb…`、`id_view_checks.json` `d499a129…` | 通过 |
+| P2-6 | metadata（A/B/C）含 revision/规则/dtype/join/占位/无效行/输入输出哈希且内部复算通过，可追溯 Phase 1（上游 22/22）；token 只读重建 34,229 条 = 3,040,709 tokens（raw=post，零截断）；wall 2,473.5s（阶段 2,452.88s + 未细分 20.62s）≈ 41.2 分钟 = 0.687 单 MIG 设备占用小时；33 正式文件 491,257,061 bytes，目录 841,796,519 bytes 含 .progress 工作缓存；B/C 共享编码只计一次（distinct 26,873 / 重复提交 7,356）；**T5 正式峰值显存未采集，如实披露** | `cost_accounting.json` `3206edf4…`、`run_records.md` `c10320f6…`、`upstream_checks.json` `4729937c…` | 通过（携带"峰值未采集"记录限制） |
+
 ## 4. 推进、恢复与交接
 
 将质量表和所有缓存哈希交给Phase 3/4。编码中断只恢复未完成item块；核对模型revision、item顺序与dtype，不能拼接不同模型产生的分块。缓存改变后，相关量化器与所有下游产物失效；只修改统计展示不应重训模型。
 
-## 5. 运行记录模板
+> **交接状态（2026-11-10）：**P2-1至P2-6全部通过并完成交接；基线为 Phase 1 commit `ded0bc13059b25c3c20f6cbc1a4c1a7c48d97649`，33 个正式缓存逐文件哈希以 `outputs/v2/evidence/phase2/t5_cache_table.json`（`639d2b89…`）为基准（关键正本：quality_features `9df37c0d…`、canonical item_ids `f7c159fd…`、A clean `cb745f4c…`、B/C clean `06d5797f…`、C train_aug `871b817e…`、C valid_aug `7127c609…`）。恢复规则：中断按 memmap 进度签名（绑定 chunk_tag/max_length/模型/文本集 SHA）续跑；上游清单变化则全部缓存与下游失效；模型 revision 锁定不跟随 main。披露：T5 正式峰值显存未采集（T2/T4 探测 8,122/7,994 MiB 仅参考）；节点 GPU 为 MIG 1g.10gb（约 9.5 GiB）切片，后续全参数训练资源不由此保证。完整交接表与问题披露见 `outputs/v2/evidence/phase2/acceptance.md`（sha256 前 16 位 `dfcad2c07b711484`）。
 
-未来填写 `outputs/v2/evidence/phase2/run_records.md`：
+## 5. 运行记录
+
+运行记录实际文件：`outputs/v2/evidence/phase2/run_records.md`（sha256 前 16 位 `c10320f65603a77c`；run_id `P2-EMB-A`/`P2-EMB-BC`/`P2-EMB-DIAG`，2026-11-10 于节点 `swu073-a800-10g`/容器 `34fb2691c7dd`，含 R-P2-0/R-P2-SMOKE/R-P2-VRF 与失败 attempt 留档）；验收文件：`outputs/v2/evidence/phase2/acceptance.md`（sha256 前 16 位 `dfcad2c07b711484`）。下方为原模板：
 
 | 字段 | 初始值 |
 |---|---|
@@ -93,8 +108,8 @@ python scripts/v2_build_embeddings.py \
 
 ## 6. 检查清单
 
-- [ ] 固定质量公式和冻结编码检查全部通过；
-- [ ] A/B/C及所有训练/诊断视图缓存齐全；
-- [ ] B/C干净表示、目录顺序和共享来源一致；
-- [ ] 无推荐训练、无正式test指标；
-- [ ] `outputs/v2/evidence/phase2/acceptance.md`记录实测证据和推进结论。
+- [x] 固定质量公式和冻结编码检查全部通过（quality_rule_checks 18/18、encoder_checks 16/16；生产路径小段重编码逐字节复现）；
+- [x] A/B/C及所有训练/诊断视图缓存齐全（正式缓存 33 文件 = 13 向量 [3686,2560] + 10 mask [3686] + 10 JSON；train_aug 有效 3,356）；
+- [x] B/C干净表示、目录顺序和共享来源一致（clean 与 7 个诊断文件字节一致；seed1701/2701 清单零混用；乱序 ID 按身份恢复）；
+- [x] 无推荐训练、无正式test指标（未运行 RQ-VAE/SFT/GRPO；Phase 3/4 未放行未启动）；
+- [x] `outputs/v2/evidence/phase2/acceptance.md`记录实测证据和推进结论（P2-1至P2-6 全部通过，携带已披露限制）。

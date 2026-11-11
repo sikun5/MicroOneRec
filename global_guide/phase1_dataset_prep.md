@@ -1,8 +1,8 @@
 # Phase 1：数据与环境准备
 
-> **初始状态：未开始。**审计参考值来自v2，须在本期重新验证。  
+> **状态：已完成并验收（2026-11-09，run_id `P1-PREP-42`）。**审计参考值来自v2，已在本期实测复核，全部通过；验收证据见 `outputs/v2/evidence/phase1/acceptance.md`。  
 > 导航：[主入口](experiment_setting.md) · 上一期：无 · [下一期：质量与表示](phase2_quality_embeddings.md)  
-> 协议：[v2 数据与环境](../../topic_minionerec_v2.md#3-数据与环境协议)。运行路径均相对 `project/MiniOneRec/`。
+> 协议：[v2 数据与环境协议](../../topic_minionerec_v2.md#3-数据与环境协议)。运行路径均相对 `project/MiniOneRec/`；本期实际执行目录为远端 `/hpc2hdd/home/swu073/sikun/dsaa5020/MicroOneRec`（经用户确认为指定工作目录的物理路径）。
 
 ## 1. 实验目标
 
@@ -56,6 +56,8 @@ python scripts/v2_prepare.py \
   --output-root outputs/v2
 ```
 
+> **实现状态（2026-11-09）：**`scripts/v2_prepare.py` 已实现并验收（含 environment/file_hashes/audit/rl/views 五阶段与 `--only` 过滤器）；检查入口 `scripts/v2_phase1_checks.py`；同版本重建副本 `scripts/v2_prepare_v13.py`。
+
 ## 3. 验收且可推进标准
 
 | 编号 | 必须核验的条件 | 未来证据位置 | 不满足时 |
@@ -69,13 +71,26 @@ python scripts/v2_prepare.py \
 
 数据版本真实变化只有经协议变更明确记录后才能采用；本指南本身不授权重定义计数或切分。自然缺失和不均衡是研究事实，不是错误。
 
+### 3.1 验收结果（2026-11-09 实测，run_id `P1-PREP-42`）
+
+| 编号 | 实测值 | 证据（sha256 前 16 位，完整值见 acceptance.md） | 结论 |
+|---|---|---|---|
+| P1-1 | 3,686 个目录商品；229 个原始缺失描述（清洗前固定）；另 98 条被官方 ≥2,000 字符清洗规则置空，清洗后空描述共 327；categories 全空未构造标签 | `data_audit.json` `a2db080e739f22bc` | 通过 |
+| P1-2 | train/valid/test = 36,259/4,532/4,533 行；test 1,987 用户、447 缺失目标行；train 7,034 用户/1,919 缺失、valid 2,011/417（与 v2 §3.1 独立审计一致） | `data_audit.json` 同上 | 通过 |
+| P1-3 | 历史/目标目录覆盖 100%（三切分不在目录数均 0）；row_id 45,324 全局唯一、行序保持；逐行身份差异 0；源文件哈希前后一致 | `identity_checks.json` `7a0a135acf05e861`（16/16 实数据不变量） | 通过 |
+| P1-4 | 恰 10,000 任务 = 8,000/1,000/1,000；任务内来源唯一；valid/test 泄漏 0；目标与行清单一致 0 差异；同 prompt 多目标冲突如实记录（296/18 组） | `rl_tasks_10000.jsonl` `e77868cae2e4ffec`、`rl_summary.json` `636d402d659d1bd3` | 通过 |
+| P1-5 | seed1701/2701 独立随机流；k=min(n−1,max(1,⌊p·n⌋)) 与保序违规 0；标题/item 身份不变；**同版本重建**（脚本 sha256 = T3 正本 `3d4c5ba1…`）5 个 jsonl 清单整文件哈希逐字节一致；data_audit 确定性节规范化哈希相等（全文件因 run 元数据不同，两种口径未混淆） | `reproducibility.json` `d303d447998836f9`（含 same_version_rebuild 节）、`views_summary.json` `ebb26ef8a355b859` | 通过 |
+| P1-6 | `environment_lock.json`：git `c6a9ffd3`/分支 MicroOneRec/tracked 无差异；Python 3.10.13、torch 2.14.0+cu130、transformers 4.45.2、trl 0.11.3、accelerate 1.0.1、bitsandbytes 0.50.2、驱动 610.57.04；GPU 实测 A800-80GB MIG 1g.10gb（9.5 GiB、14 SM）；双模型本地路径与不可变 revision `da87bfb6…` / `5cf2132a…`（4 个大文件 SHA-256 = HF LFS oid） | `environment_lock.json` `b102c41efddd2b09`、`pip_freeze.txt` `f104eac93fce544d` | 通过 |
+
 ## 4. 推进、恢复与交接
 
 P1-1至P1-6通过后，将环境锁和全部manifest的路径/哈希交给Phase 2。中断后复核源哈希和已生成清单，仅补缺失部分。源数据或清单发生变化时，后续依赖缓存和训练全部标记需重新验收。
 
-## 5. 运行记录模板
+> **交接状态（2026-11-09）：**P1-1至P1-6已全部通过并完成交接；完整路径/哈希交接表、恢复规则（哈希基准、全阶段重建法、失效传播、revision 锁定、复核副本定位）与问题披露见 `outputs/v2/evidence/phase1/acceptance.md`（sha256 `8ad3963540b939b2`）。注意：本节点可用 GPU 为 MIG 1g.10gb（9.5 GiB）切片，Phase 2 编码资源预算须在开工前决策。
 
-未来填写 `outputs/v2/evidence/phase1/run_records.md`：
+## 5. 运行记录
+
+运行记录实际文件：`outputs/v2/evidence/phase1/run_records.md`（sha256 `5f240aa55a330bdc`，run_id `P1-PREP-42`，含 R1–R5 全部运行与失败 attempt 留档）；验收文件：`outputs/v2/evidence/phase1/acceptance.md`（sha256 `8ad3963540b939b2`）。下方为原模板：
 
 | 字段 | 初始值 |
 |---|---|
@@ -89,8 +104,8 @@ P1-1至P1-6通过后，将环境锁和全部manifest的路径/哈希交给Phase 
 
 ## 6. 检查清单
 
-- [ ] 原始数据只读且身份、计数和覆盖全部通过；
-- [ ] 公共清洗、缺失标签、10k任务与两类扰动清单冻结；
-- [ ] 环境、模型revision和哈希齐全；
-- [ ] 未生成正式test推荐指标；
-- [ ] `outputs/v2/evidence/phase1/acceptance.md`有真实逐项证据与推进结论。
+- [x] 原始数据只读且身份、计数和覆盖全部通过（reference_comparison 7/7 match；row_id 45,324 唯一；覆盖 100%；源哈希终验不变）；
+- [x] 公共清洗、缺失标签、10k任务与两类扰动清单冻结（rows_manifest/catalog_clean/rl_tasks/train_views/diagnostic_views 哈希基准已建立，同版本重建逐字节复现）；
+- [x] 环境、模型revision和哈希齐全（environment_lock.json + 双模型 LFS 校验）；
+- [x] 未生成正式test推荐指标（仅审计test身份与计数）；
+- [x] `outputs/v2/evidence/phase1/acceptance.md`有真实逐项证据与推进结论（P1-1至P1-6 全部通过）。

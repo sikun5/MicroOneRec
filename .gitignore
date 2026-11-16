@@ -10,3 +10,9 @@ __pycache__/
 .env
 .env.*
 *.env
+
+# Local runtime: migrate separately, never commit
+/.venv-phase2/
+/.venv-phase3/
+/outputs/
+/scripts/outputs/

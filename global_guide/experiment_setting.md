@@ -1,7 +1,9 @@
 # MiniOneRec v2：分期实验主入口
 
-> **初始状态：未开始。**本文是实验执行规划，不代表脚本已实现、训练已完成或验收已通过。  
-> **研究协议来源：**[topic_minionerec_v2.md](../../topic_minionerec_v2.md)。[v1 原设计](../../topic_minionerec.md)仅供追溯。  
+> **协议与执行状态：**本页保留初始规划；[Phase7](phase7_grpo_training.md) 已于 2026-11-17 验收完成，Phase8 尚未执行。下方“初始状态”列为历史规划，不代表实时进度。
+>
+> **研究协议来源：**[topic_minionerec_v2.md](topic_minionerec_v2.md)。[v1 原设计](../../topic_minionerec.md)仅供追溯。
+>
 > **工作目录：**所有运行命令从 `project/MiniOneRec/` 执行；本文中的 `outputs/v2/` 等产物路径均相对此目录。指南目录只存说明，不存训练产物。
 
 ## 1. 目标与研究边界
@@ -65,7 +67,7 @@ flowchart TD
 | [Phase 4：SID](phase4_sid_diagnostics_export.md) | 三种子诊断、seed 42 映射、共同词表、重映射 CSV | 未开始 | 待执行生成 |
 | [Phase 5：基线与评测器](phase5_baselines_eval_protocol.md) | 两个冻结基线、经合成样例验证的评测/统计接口 | 未开始 | 待执行生成 |
 | [Phase 6：SFT](phase6_sft_training.md) | A-SFT/B-SFT/C-SFT 最佳 validation loss checkpoint | 未开始 | 待执行生成 |
-| [Phase 7：GRPO](phase7_grpo_training.md) | A-RL/B-RL/C-RL 完整两 epoch 最终 checkpoint | 未开始 | 待执行生成 |
+| [Phase 7：GRPO（已验收，见实际总结）](phase7_grpo_training.md) | A-RL/B-RL/C-RL 完整两 epoch 最终 checkpoint | 未开始 | `outputs/v2/evidence/phase7/acceptance.md`（已生成） |
 | [Phase 8：正式统计](phase8_final_evaluation.md) | 主表、切片、区间、SID/资源表、结论 | 未开始 | 待执行生成 |
 
 正常依赖是 1→2→3→4→5→6→7→8。上游验收未通过时不得启动依赖该产物的正式运行。Phase 5 可提前做纯合成指标测试，但正式基线必须使用冻结后的共同目录/数据协议。
@@ -177,7 +179,7 @@ outputs/v2/
 | `scripts/v2_export_sid.py` | 待新增接口 | Phase 4 |
 | `sasrec.py` | 既有基线；需适配共同数据、选模和结果接口 | Phase 5 |
 | `sft.py` | 既有入口；需共同词表、完整四token和任务适配 | Phase 6 |
-| `scripts/v2_train_grpo.py` | 待新增入口，复用原 ReReTrainer/reward | Phase 7 |
+| `scripts/v2_train_grpo.py`、`scripts/v2_train_grpo_audit.py` | 已实现；正式审计入口、实际配置与已执行源码归档见 Phase7 总结 | Phase 7 |
 | `evaluate.py` | 既有入口；需生成配置、row_id和结果适配 | Phase 5/8 |
 | `scripts/v2_evaluate.py` | 待新增评测统计接口，Phase 5验证后Phase 8正式使用 | Phase 5/8 |
 

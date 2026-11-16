@@ -1,0 +1,204 @@
+{
+  "schema": "phase7-completed-core-source-archive-v1",
+  "date": "2026-11-17",
+  "experiment_source_commit": "1f5c01ccd6ee25f6989039733e15dff0072f9aad",
+  "archive_scope": "Executed experiment sources and recorded configurations only; no runtime payloads or SSH/migration/polling orchestration.",
+  "files": {
+    "h100_telemetry.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/h100_telemetry.py",
+      "sha256": "0a4cc0ceb041f86870777218d87e318543911c0639863189b6a622b606982a09",
+      "bytes": 10465,
+      "role": "Formal B/C passive raw-SID, grouping, memory, parameter and native reference-sync observation; CPU self-test.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/h100_telemetry.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/h100_telemetry.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/h100_telemetry.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/h100_telemetry.py"
+      ]
+    },
+    "h100_supervisor.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/h100_supervisor.py",
+      "sha256": "14990bbd8a38054913d51bea4769a40b8c9701faa57043c5c8bb30f5864eb6e2",
+      "bytes": 1399,
+      "role": "Persistent formal-run supervisor with immutable-entry/output guards and real process exit receipt.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/h100_supervisor.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/h100_supervisor.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/h100_supervisor.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/h100_supervisor.py"
+      ]
+    },
+    "h100_final_audit.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/h100_final_audit.py",
+      "sha256": "4f9d0fa4fc97959666bbe1c89ad8319ff0ed21a3c9608edbad4c088a12524bd0",
+      "bytes": 9312,
+      "role": "Independent CPU audit of final B/C budgets, raw tokens, rewards, finite weights and native EMA.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/h100_final_audit.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/h100_final_audit.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/h100_final_audit.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/h100_final_audit.py"
+      ]
+    },
+    "post_supervisor.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/post_supervisor.py",
+      "sha256": "106171ddff28d526bff2030c8bbff1786654377d4f83e1c9609d786896fe3dab",
+      "bytes": 1167,
+      "role": "Training-exit-gated sequential CPU audit and validation process supervision.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/post_supervisor.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/post_supervisor.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/post_supervisor.py",
+        "outputs/v2/evidence/phase7/h100_C_20261117/post_supervisor.py"
+      ]
+    },
+    "sync_only.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/sync_only.py",
+      "sha256": "a0e336dc41c715570993cccf936777d222167539deba6f9bed97954e45b25f6b",
+      "bytes": 1563,
+      "role": "Read-only CPU check of captured native step512 before/policy/after tensors.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_C_20261117/sync_only.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/h100_C_20261117/sync_only.py"
+      ]
+    },
+    "spike_diag.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/spike_diag.py",
+      "sha256": "6db54933a2acce8dd65b06329fcfa969781818e59ed57196ad18f3fd8cf824f3",
+      "bytes": 4732,
+      "role": "Existing C logs/config/installed-source inspection for KL spikes and pre-clip norm semantics.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_C_20261117/spike_diag.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/h100_C_20261117/spike_diag.py"
+      ]
+    },
+    "phase7_final_check.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/phase7_final_check.py",
+      "sha256": "05c00e26d11bdf6caf654eec039da15e75e024c88522d752eb1c9b964c90efdc",
+      "bytes": 13963,
+      "role": "Successful T8 attempt002 six-model CPU finite/hash/binding/source-order checker; SFT BF16, RL FP32.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/final_handoff_20261117/check_attempt002/phase7_final_check.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/final_handoff_20261117/check_attempt002/phase7_final_check.py"
+      ]
+    },
+    "package_phase7.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/package_phase7.py",
+      "sha256": "e6de5fd0b8ddfbb25730df3a4424ee5e9ec147bb16ccc00d96773e57882ac647",
+      "bytes": 19248,
+      "role": "Frozen Phase7 evidence matrix, selected-checkpoint/resource summaries and artifact index builder.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/final_handoff_20261117/package_phase7.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/final_handoff_20261117/package_phase7.py"
+      ]
+    },
+    "verify_phase7_package.py": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/verify_phase7_package.py",
+      "sha256": "31cd30f2a36b3d0d7820d2e847f71f42df8e2311b5a2b71a30d51b856d69e884",
+      "bytes": 3653,
+      "role": "Historical final package SHA/size/model/Git/owned-process verification, pinned to pre-archive HEAD.",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/final_handoff_20261117/verify_phase7_package.py"
+      ],
+      "matched_accepted_index_paths": [
+        "outputs/v2/evidence/phase7/final_handoff_20261117/verify_phase7_package.py"
+      ]
+    },
+    "preflight/probe.py": {
+      "source_project_relative": "working-repo-phase7/b_preflight-20261116/probe.py",
+      "sha256": "6e980330e544c00e9425eb8eabe574f59bbd8c2328a2291ecea742f9e8050db3",
+      "bytes": 9728,
+      "role": "Executed M3 offline load/environment probe",
+      "original_runtime_paths": [
+        "outputs/v2/debug/phase7/b_preflight/attempt_001/probe.py"
+      ]
+    },
+    "preflight/supervisor.py": {
+      "source_project_relative": "working-repo-phase7/b_preflight-20261116/supervisor.py",
+      "sha256": "359c93dd4668ea8df81addbeee2dfa16cb872ae4f3d54fc392c470844bec38cf",
+      "bytes": 1582,
+      "role": "Executed M3 isolated-process supervisor",
+      "original_runtime_paths": [
+        "outputs/v2/debug/phase7/b_preflight/attempt_001/supervisor.py"
+      ]
+    },
+    "configs/B-RL.recorded.json": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/launch_config.json",
+      "source_local_sha256": "f2673c5ffef88809383dfcfcd9021d2453c5c404dd22c17eddc1773829598894",
+      "sha256": "dad0d3f1c93aa78b3cde02b116dded16894f1095cd1d17bfec8373e4e676f526",
+      "bytes": 2309,
+      "role": "Historical executed configuration, not a fresh-run template",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_B_20261117/launch_config.json"
+      ],
+      "normalization": "Remove only the local additional terminal LF to match accepted remote bytes."
+    },
+    "configs/C-RL.recorded.json": {
+      "source_project_relative": "working-repo-phase7/h100-worker-20261117/C_launch_config.json",
+      "source_local_sha256": "465add666f7f517af97ea397823c47c2bf181aae0278337664d75951b3d56249",
+      "sha256": "465add666f7f517af97ea397823c47c2bf181aae0278337664d75951b3d56249",
+      "bytes": 2349,
+      "role": "Historical executed configuration, not a fresh-run template",
+      "original_runtime_paths": [
+        "outputs/v2/evidence/phase7/h100_C_20261117/launch_config.json"
+      ],
+      "normalization": "None; byte-for-byte copy."
+    }
+  },
+  "unchanged_training_entries": {
+    "scripts/v2_train_grpo.py": "8a1dee2c29d482726eba2c2dd4d3e59560df7aa1add9acebabb5a9f610c08410",
+    "scripts/v2_train_grpo_audit.py": "fda1ee5b525a9d49667effab51c5dc9d5493cb3c20f521c889da03c8f5797ab1",
+    "scripts/v2_grpo_stream.py": "cba411eac15e0be1761bf89d712c2a5f15a2ba41d88982f9fdf8b2c83e663d57"
+  },
+  "accepted_evidence_anchors": {
+    "outputs/v2/evidence/phase7/final_checkpoints.json": {
+      "sha256": "17f72a0186f781676722a9e79a1e35671670ce872c26128e52c65fef8891946b",
+      "bytes": 25409
+    },
+    "outputs/v2/evidence/phase7/artifact_inventory.json": {
+      "sha256": "46c6ff655dac932f65a169381bf904f3b9d26ccc32bb5ce1bbffe589ee57c0b8",
+      "bytes": 66086
+    },
+    "outputs/v2/evidence/phase7/resource_summary.json": {
+      "sha256": "6058bf0b260dc30604d5023abf9c82579b678917ff78492c58900a10f54fb259",
+      "bytes": 17422
+    },
+    "outputs/v2/evidence/phase7/run_records.md": {
+      "sha256": "a91e8739a9dbe71c2b5ed2ebd4ae3defd971dc97c0d2227038c6ba6c02ee73d0",
+      "bytes": 5409
+    },
+    "outputs/v2/evidence/phase7/acceptance.md": {
+      "sha256": "617bf67ab7c62d90f02714043ccb089214dd22c48e4109dbba4547887c24b602",
+      "bytes": 5195
+    },
+    "outputs/v2/evidence/phase7/final_handoff_20261117/p7_evidence_matrix.json": {
+      "sha256": "9453918e4717f94fdb380935c210744710b4e4cf015c027ec742c0ab4e328854",
+      "bytes": 4647
+    },
+    "outputs/v2/evidence/phase7/final_handoff_20261117/package_verification.json": {
+      "sha256": "7791e98a38766b934ab58ea248b4424b3b30c2e08460bf52d5e7d239d7e8332b",
+      "bytes": 1499
+    }
+  },
+  "limitations": [
+    "Immutable historical snapshots, not refactored portable entrypoints. Several sources depend on original absolute paths/date-specific runtime.",
+    "verify_phase7_package.py intentionally checks historical HEAD 1f5c01c; its unchanged source must not be treated as a passing post-archive-commit verifier.",
+    "Packaging/probes may write reports; existing runtime must not be overwritten or recursively executed. No experiment was run while archiving."
+  ]
+}

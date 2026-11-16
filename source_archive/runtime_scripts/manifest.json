@@ -1,0 +1,534 @@
+{
+  "format_version": 1,
+  "purpose": "Byte-preserving archive of independent project scripts formerly stored only alongside runtime artifacts.",
+  "execution": "Historical snapshots, not alternate active entrypoints. Restore the original relative location and dependencies before reproducing the historical command. No runtime files were moved or removed.",
+  "entries": [
+    {
+      "source": "outputs/v2/checkpoints/t5_asft_run.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/checkpoints/t5_asft_run.sh",
+      "sha256": "5a072f63d8982dc0e992c73c7e0d6f6bb9caa8c0db9997a5dd68d38b0e862db9",
+      "mode": 420,
+      "size": 657,
+      "all_originals": [
+        "outputs/v2/checkpoints/t5_asft_run.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/checkpoints/t6_bsft_run.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/checkpoints/t6_bsft_run.sh",
+      "sha256": "bac84b76e9f36648bcc7503cf7bd89515271c100bf6063ec4152bd8f82576897",
+      "mode": 420,
+      "size": 657,
+      "all_originals": [
+        "outputs/v2/checkpoints/t6_bsft_run.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/checkpoints/t7_csft_run.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/checkpoints/t7_csft_run.sh",
+      "sha256": "dee2f09e7657f7ab55a2952eb9856408d4ce577568e23cc601a0d79e7e04913d",
+      "mode": 420,
+      "size": 657,
+      "all_originals": [
+        "outputs/v2/checkpoints/t7_csft_run.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/checkpoints/t8_raw_run.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/checkpoints/t8_raw_run.sh",
+      "sha256": "3fc133f788b6e6eb7c03b8e60ec9051ed6953c08d958421e24761e5dab4da677",
+      "mode": 420,
+      "size": 335,
+      "all_originals": [
+        "outputs/v2/checkpoints/t8_raw_run.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_probe_run.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_probe_run.sh",
+      "sha256": "292be142b76eb3253e000d1ebd8582efd2f423ff16077c9ed0328b1fe1214754",
+      "mode": 493,
+      "size": 2185,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_probe_run.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_probe_run2.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_probe_run2.sh",
+      "sha256": "202c118cd30abfbce3d49d16ace144445755bcdf22f3158de48b21dab4ae1762",
+      "mode": 420,
+      "size": 1679,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_probe_run2.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_regen_run.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_regen_run.sh",
+      "sha256": "cd9a1b7409fd815b840bc6cd46d9deb5b1c0a30f87d76510dfae11c0dcbae06c",
+      "mode": 420,
+      "size": 378,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_regen_run.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_reload_reports.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_reload_reports.sh",
+      "sha256": "b20ad2b974375c6893761267822d05f3199ffb8e095118bb2d3e80c6e7418fe1",
+      "mode": 420,
+      "size": 267,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_reload_reports.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run.sh",
+      "sha256": "75a10d2857990f065b8d363bb1f92939f89c224428acca26f538e887e803f62a",
+      "mode": 420,
+      "size": 491,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run2.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run2.sh",
+      "sha256": "a01d26fd012f4b3072512943f6336646cc2e46db04e274b8bb435d5791179715",
+      "mode": 420,
+      "size": 576,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run2.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run3.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run3.sh",
+      "sha256": "e7b9b4f49a5ff94b37ea7e3d31be8af476165506ee457b463b1db764170889e7",
+      "mode": 420,
+      "size": 592,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run3.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run4.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run4.sh",
+      "sha256": "23ab2b7808c5320661c8a997b1ac4c5fb03e610b8c404f11590091f24ec24c50",
+      "mode": 420,
+      "size": 542,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run4.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run5.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run5.sh",
+      "sha256": "e14925a6ce1b6bfd595b342ba921ab8339ea23223dec1d4c17f9d63582995952",
+      "mode": 420,
+      "size": 665,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run5.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run6.sh",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run6.sh",
+      "sha256": "71453f8f1cf371adde8d86fda85ebb51bc1b774acc90a1ebae0b23d214664fad",
+      "mode": 420,
+      "size": 576,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/t4_smoke_run6.sh"
+      ]
+    },
+    {
+      "source": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/v2_sft.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/v2_sft.py",
+      "sha256": "9f922c18a34c58c8fad7e06c220492780dd6e24ff768f2d7b2915526fd956d04",
+      "mode": 420,
+      "size": 9910,
+      "all_originals": [
+        "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/v2_sft.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t2_envlock.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t2_envlock.py",
+      "sha256": "66ad6acb61c2cc122efb89df7f3a93c0798edf324e25bb9e17cea63163a78954",
+      "mode": 420,
+      "size": 9468,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t2_envlock.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t2_upstream_checks.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t2_upstream_checks.py",
+      "sha256": "4d49aed12ca1769769e59e64c2ce04078d3a063f31abe81a800868c9061c27bb",
+      "mode": 420,
+      "size": 8647,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t2_upstream_checks.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t3_interface_probe.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t3_interface_probe.py",
+      "sha256": "1aeba2513df3e6f5ba551362f149a0d61e607e5d57a6c58dc1b3d173353c5964",
+      "mode": 420,
+      "size": 11798,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t3_interface_probe.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_e3_bisect.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_e3_bisect.py",
+      "sha256": "ca2e7c4a8f1de2852bacff534410578838446137db0e5f9c09ae779d7ce48ea3",
+      "mode": 420,
+      "size": 8100,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_e3_bisect.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_e4_cublas.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_e4_cublas.py",
+      "sha256": "dbee9d7f6b38f67dd56aa9f3db383dd920121a27642d84e4f0c8916bd6358942",
+      "mode": 420,
+      "size": 4493,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_e4_cublas.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_e5.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_e5.py",
+      "sha256": "a186e5f060e783fb3273dd3fcacfe413d692d2a6e36e6f96a2d3c4e2240af2c6",
+      "mode": 420,
+      "size": 1559,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_e5.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_e6b.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_e6b.py",
+      "sha256": "344815ad5ba7d24bcd3a5d0bbe19e7a644a638eaf5de115bfc670f2db12e6342",
+      "mode": 420,
+      "size": 4401,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_e6b.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_e6c.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_e6c.py",
+      "sha256": "c421b822ce637a56bb627991823de55c93b45c9f94f2a994e5aeb1f287d2fcd4",
+      "mode": 420,
+      "size": 4641,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_e6c.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_e6d.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_e6d.py",
+      "sha256": "8ffb0d2fa173c74d35cdeb4d840c7ff8b5a698330c91c7d67b180ce2077f525d",
+      "mode": 420,
+      "size": 5757,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_e6d.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_e7.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_e7.py",
+      "sha256": "f60bca495c467cb51cb44b49a3e8621e89d3c0765fac1355d67b7608f6509daa",
+      "mode": 420,
+      "size": 3276,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_e7.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_resume_exact.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_resume_exact.py",
+      "sha256": "b055b92260f3537d67d9543d79f8622ba6ee1c00e1f0221e5c50ca95d6ca3277",
+      "mode": 420,
+      "size": 8514,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_resume_exact.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t4_snapshot_fidelity.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t4_snapshot_fidelity.py",
+      "sha256": "830708e9ce8c630f9fd6fe2abf06a5439d38aa263a2881a196b891bfb0126000",
+      "mode": 420,
+      "size": 8896,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t4_snapshot_fidelity.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t5_record_extract.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t5_record_extract.py",
+      "sha256": "1fed8612a38394ec7e812e3a2a2ff7b441013c4fa4da67939f768114a5b69ed0",
+      "mode": 420,
+      "size": 7348,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t5_record_extract.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t6_checkpoint_checks.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t6_checkpoint_checks.py",
+      "sha256": "bc94698db322d9099a288cb82c6e4d6f053a61aef72f7edc83e0d9891e93f32a",
+      "mode": 420,
+      "size": 7265,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t6_checkpoint_checks.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase3/t6_resource_summary_gen.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase3/t6_resource_summary_gen.py",
+      "sha256": "3f808c480d26ca2da6cac981c9355717b9824436693b420d91189a4f1d71b9cf",
+      "mode": 420,
+      "size": 4363,
+      "all_originals": [
+        "outputs/v2/evidence/phase3/t6_resource_summary_gen.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase4/t2_envlock.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase4/t2_envlock.py",
+      "sha256": "1e4c0ebe66f4a643a7816339119cacf05e35d8817f3b89484a9d5951e9564c3b",
+      "mode": 420,
+      "size": 7121,
+      "all_originals": [
+        "outputs/v2/evidence/phase4/t2_envlock.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase4/t2_input_inventory.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase4/t2_input_inventory.py",
+      "sha256": "85a745b99bee2764a6564eceb8e9542276d077c34d9770dcb7d19ac2bf2a7aa7",
+      "mode": 420,
+      "size": 10624,
+      "all_originals": [
+        "outputs/v2/evidence/phase4/t2_input_inventory.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase4/t2_support_checks.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase4/t2_support_checks.py",
+      "sha256": "a2187e8f8594042f7b6c62dc01e9303033911eef7e1f312be580d4b9ae626e6c",
+      "mode": 420,
+      "size": 8015,
+      "all_originals": [
+        "outputs/v2/evidence/phase4/t2_support_checks.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase4/t3_failure_probe.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase4/t3_failure_probe.py",
+      "sha256": "35affbcefa5edb9e8a9fe146ca3ad6c048786f7fe016708786b676c1e835ffe7",
+      "mode": 420,
+      "size": 5992,
+      "all_originals": [
+        "outputs/v2/evidence/phase4/t3_failure_probe.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase4/t6_checks.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase4/t6_checks.py",
+      "sha256": "150b5b7c853a0d2d5c5606a688158066c23d10b1bdd9d29f18f02b137eef2a7f",
+      "mode": 420,
+      "size": 11114,
+      "all_originals": [
+        "outputs/v2/evidence/phase4/t6_checks.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase4/t6_docs.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase4/t6_docs.py",
+      "sha256": "dd9c577cad0e6929e49eba9ac75f603b6aa223d04664f029d4d910c95c08eecf",
+      "mode": 420,
+      "size": 13977,
+      "all_originals": [
+        "outputs/v2/evidence/phase4/t6_docs.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase5/t1_checks.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase5/t1_checks.py",
+      "sha256": "c5cc80f25c121d02939022984071356d1bc4c4f067e6386c5b104f0d05233a03",
+      "mode": 420,
+      "size": 28042,
+      "all_originals": [
+        "outputs/v2/evidence/phase5/t1_checks.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase5/t6_checks.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase5/t6_checks.py",
+      "sha256": "78bdcadb69061a504f5ff887b012ef4700db8cba23c726e393ea26386eff2a31",
+      "mode": 420,
+      "size": 17397,
+      "all_originals": [
+        "outputs/v2/evidence/phase5/t6_checks.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase5/t6_pkg_fix2.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase5/t6_pkg_fix2.py",
+      "sha256": "1f74df4fc0ecea93db11f0c8f89cfa5d9434e27f5cb2dc6f0cbcbfd01c3f05c8",
+      "mode": 420,
+      "size": 2576,
+      "all_originals": [
+        "outputs/v2/evidence/phase5/t6_pkg_fix2.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase5/t6_protocol_check.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase5/t6_protocol_check.py",
+      "sha256": "0abb52ddcfee0e5fce508001a231749acc5f5c2f4a307b596ee572b23240718c",
+      "mode": 420,
+      "size": 5838,
+      "all_originals": [
+        "outputs/v2/evidence/phase5/t6_protocol_check.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/audit_final.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/audit_final.py",
+      "sha256": "65dda18e928f5c9ef6a8f60be01c96124791dbb83979e7e49a657575a84233e0",
+      "mode": 420,
+      "size": 8073,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/audit_final.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/load_check_wrapper.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/load_check_wrapper.py",
+      "sha256": "4d1a36038ac3defad394b1927e3ddeb36df8bc68ce145a775c897b560f81c774",
+      "mode": 420,
+      "size": 1058,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/load_check_wrapper.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/loadcheck.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/loadcheck.py",
+      "sha256": "0706019bc8ffabb25e37da4c0b6215a4a33952b4ca0f2eb7fdb74d7896381124",
+      "mode": 420,
+      "size": 6440,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/loadcheck.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/make_addendum.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/make_addendum.py",
+      "sha256": "0e7f4ec4d9e941dba823a9d6f548c869778950fbbefa5f5f50b9d99da5cf40e8",
+      "mode": 420,
+      "size": 1870,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/make_addendum.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/package_A.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/package_A.py",
+      "sha256": "f8fc8bdc88cb1fa917f32e9e02880f9b8866f4550e28ce423b28e61c9f9481c7",
+      "mode": 420,
+      "size": 13211,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/package_A.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/phase7_subworker_refaudit_20261116.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/phase7_subworker_refaudit_20261116.py",
+      "sha256": "1e00770cc031e43c05a72948f5e5b1e517839a670b471bd2372ed3fec1e77385",
+      "mode": 420,
+      "size": 2917,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/phase7_subworker_refaudit_20261116.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/phase7_subworker_takeover_20261116.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/phase7_subworker_takeover_20261116.py",
+      "sha256": "580f6af75a949c4deea5970992c58b2b3858fe1aac990e26010ad33f14e25e65",
+      "mode": 420,
+      "size": 4508,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/phase7_subworker_takeover_20261116.py"
+      ]
+    },
+    {
+      "source": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/status_snapshot.py",
+      "target": "source_archive/runtime_scripts/outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/status_snapshot.py",
+      "sha256": "ab41e9fd5b190119b61448c00f9a349f691822459d51356dc6925c91669d2527",
+      "mode": 420,
+      "size": 1615,
+      "all_originals": [
+        "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/status_snapshot.py"
+      ]
+    }
+  ],
+  "existing_source_backups_not_duplicated": [
+    {
+      "original": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/v2_sft_data.py",
+      "already_versioned_source": "scripts/v2_sft_data.py",
+      "sha256": "9bf546d9002959f6176ce34e71a98604b2af44a5e46e4949dec3b29a732c4193"
+    },
+    {
+      "original": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/v2_sft_gradcheck.py",
+      "already_versioned_source": "scripts/v2_sft_gradcheck.py",
+      "sha256": "bd3f60f338d7ed3bf1694616be8865c022e88025f8d9d3ca1b2f5e4f531a2970"
+    },
+    {
+      "original": "outputs/v2/debug/phase6/sft_smoke/attempt_001/configs/v2_sft_init.py",
+      "already_versioned_source": "scripts/v2_sft_init.py",
+      "sha256": "893d8eae112b870deabd92cdb68100d3a2c19c8a6609dbc57f134cb3a166c35c"
+    },
+    {
+      "original": "outputs/v2/evidence/phase6/t2_checks.py",
+      "already_versioned_source": "scripts/t2_checks.py",
+      "sha256": "61295c4960ef260884be2c226e920d6ff00b3bd7ae06af25aa2a5a94278d8982"
+    },
+    {
+      "original": "outputs/v2/evidence/phase6/t3_checks.py",
+      "already_versioned_source": "scripts/t3_checks.py",
+      "sha256": "868e250fa0db206f58455c8f5f826ab0e4b4d04e0a98072b7b59a950abc0f17f"
+    },
+    {
+      "original": "outputs/v2/evidence/phase6/t8_checks.py",
+      "already_versioned_source": "scripts/t8_checks.py",
+      "sha256": "3d58f899d430b7c5ab3fbce6098521b378e8dc1b97612c17671dff527b10e393"
+    },
+    {
+      "original": "outputs/v2/evidence/phase6/t8_strict_recheck.py",
+      "already_versioned_source": "scripts/t8_strict_recheck.py",
+      "sha256": "cf94fe905c6eef642fd925f5bc681fc51183ddff6f65572f18493dc44c95b7f1"
+    },
+    {
+      "original": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/v2_train_grpo.py",
+      "already_versioned_source": "scripts/v2_train_grpo.py",
+      "sha256": "8a1dee2c29d482726eba2c2dd4d3e59560df7aa1add9acebabb5a9f610c08410"
+    },
+    {
+      "original": "outputs/v2/evidence/phase7/substitute_takeover_20261116T170236/v2_train_grpo_audit.py",
+      "already_versioned_source": "scripts/v2_train_grpo_audit.py",
+      "sha256": "fda1ee5b525a9d49667effab51c5dc9d5493cb3c20f521c889da03c8f5797ab1"
+    }
+  ]
+}
